@@ -8,21 +8,19 @@ import java.util.Set;
 
 public class DataHelper {
 
-    // TODO: completare i metodi seguenti
-
-    // restituisce una lista di numeri interi casuali compresi tra 0 e 10
+    // Returns a list of random integers between 0 and 10
     public static List<Integer> getRandomInteger(int size) {
 
         return getRandomInteger(size, 0, 10);
     }
 
-    // restituisce una lista di numeri interi casuali compresi tra 0 e max
+    // Returns a list of random integers between 0 and max.
     public static List<Integer> getRandomInteger(int size, int max) {
 
         return getRandomInteger(size, 0, max);
     }
 
-    // restituisce una lista di numeri interi casuali compresi tra min e max
+    // Returns a list of random integers between min and max
     // ?* Main Method
     public static List<Integer> getRandomInteger(int size, int min, int max) {
 
@@ -43,39 +41,36 @@ public class DataHelper {
         }
     }
 
-    // restituisce una lista di numeri casuali NON DUPLICATI compresi tra 0 e 10
+    // Returns a list of NON-DUPLICATED random numbers between 0 and 10
     public static Set<Integer> getRandomUniqueInteger(int size) {
 
         return getRandomUniqueInteger(size, 0, 10);
     }
 
-    // restituisce una lista di numeri casuali NON DUPLICATI compresi tra 0 e max
+    // Returns a list of NON-DUPLICATED random numbers between 0 and max.
     public static Set<Integer> getRandomUniqueInteger(int size, int max) {
 
         return getRandomUniqueInteger(size, 0, max);
     }
 
-    // restituisce una lista di numeri casuali NON DUPLICATI compresi tra min e
+    // Returns a list of UNDUPLICATED random numbers between min and
     // max
     // ?* Main Method
     public static Set<Integer> getRandomUniqueInteger(int size, int min, int max) {
 
         List<Integer> rnd = getRandomInteger(size, min, max);
         Set<Integer> s = new HashSet<>(rnd);
-        // System.out.println(rnd);
         return s;
     }
 
-    // restituisce una mappa di frequenza di numeri interi
+    // Returns a frequency map of integers
     public static Map<Integer, Integer> getFrequencyMap(List<Integer> list) {
 
         Map<Integer, Integer> freq = new HashMap<>();
         for (Integer n : list) {
             Integer count = freq.getOrDefault(n, 0);
-            // System.out.println("count: " + count);
             freq.put(n, count + 1);
         }
-
         return freq;
     }
 
